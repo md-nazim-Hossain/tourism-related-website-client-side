@@ -20,7 +20,7 @@ const Booking = () => {
     const messageRef = useRef();
 
     useEffect(()=>{
-        const url =`http://localhost:5000/services/${id}`;
+        const url =`https://salty-taiga-78312.herokuapp.com/services/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setService(data));
@@ -44,7 +44,7 @@ const Booking = () => {
        const myBooking = {name,countryName,passportNumber,email,date,message};
 
        // post data to server
-       fetch('http://localhost:5000/booking',{
+       fetch('https://salty-taiga-78312.herokuapp.com/booking',{
            method:"POST",
            headers:{
                "content-type":"application/json"

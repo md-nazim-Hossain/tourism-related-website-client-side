@@ -8,7 +8,7 @@ const ManageAllBookings = () => {
 
     // get manage all Bookings
     useEffect(() =>{
-        fetch('http://localhost:5000/manageBookings')
+        fetch('https://salty-taiga-78312.herokuapp.com/manageBookings')
         .then(res => res.json())
         .then(data => setManageBookings(data));
     },[]);

@@ -7,7 +7,7 @@ const MyBooking = ({booking,setMyBookings,myBookings}) => {
     // DElete My booking
     
     const handleMyBookingDel = id =>{
-        const url = `http://localhost:5000/myBooking/${id}`;
+        const url = `https://salty-taiga-78312.herokuapp.com/myBooking/${id}`;
         const confirm = window.confirm("Are You Sure You Wanted Deleted ? ");
         if(confirm){
             fetch(url,{

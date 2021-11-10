@@ -10,7 +10,7 @@ const MyBookings = () => {
     const email = user.email;
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/myBookings/${email}`)
+        fetch(`https://salty-taiga-78312.herokuapp.com/myBookings/${email}`)
         .then(res => res.json())
         .then(data => setMyBookings(data));
     },[]);

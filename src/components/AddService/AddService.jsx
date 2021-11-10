@@ -19,7 +19,7 @@ const AddService = () => {
         const newService = {name:name,title:title,price:cost,img:url,description:description};
 
         // post data to server
-        fetch('http://localhost:5000/addService',{
+        fetch('https://salty-taiga-78312.herokuapp.com/addService',{
             method:'POST',
             headers:{
                 "content-type":"application/json"
