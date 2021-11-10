@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Container, Spinner, Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import MyBooking from '../../MyBooking/MyBooking';
 
@@ -12,6 +12,12 @@ const ManageAllBookings = () => {
         .then(res => res.json())
         .then(data => setManageBookings(data));
     },[]);
+
+    if(!manageBookings.length){
+        return <div className="text-center p-5">
+                <Spinner animation="grow" />
+            </div>
+    }
 
     return (
         <div className="mb-5">

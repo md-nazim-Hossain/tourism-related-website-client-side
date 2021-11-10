@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was React with [Green Tourism live site](https://github.com/facebook/create-react-app).
+This project was React with [Green Tourism live site](https://goofy-jennings-6fdc1f.netlify.app).
 
 ## Our Services
 <ul>
