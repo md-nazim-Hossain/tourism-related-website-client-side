@@ -49,7 +49,7 @@ const AddService = () => {
                 <h2 className='py-5 text-center'>Please Add <span className='common-color'>Service</span></h2>
                 <p className='text-muted text-start ps-2 border-left'> red denotes are required</p>
                 <Form onSubmit={handleAddService}>
-                    <Row xm={1} sm={1} md={2}>
+                    <Row xs={1} sm={1} md={2}>
                         <Col>
                             <Form.Control placeholder="Country Name" ref={nameRef} className='mb-3 border-right' required/>
                         </Col>
@@ -65,7 +65,7 @@ const AddService = () => {
                         <Col>
                             <Form.Control
                                 as="textarea"
-                                placeholder="Write Description About Tour Related border-right"
+                                placeholder="Write Description About Tour Related"
                                 style={{ height: '100px' }}
                                 className='mb-3 border-right'
                                 required
