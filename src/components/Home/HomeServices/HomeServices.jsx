@@ -12,10 +12,11 @@ const HomeServices = () => {
     },[])
     
     if(!services.length){
-        return <div className="text-center p-5">
+        return <div className="text-center p-5 my-5">
                 <Spinner animation="grow" />
             </div>
     }
+
     return (
         <Container className="py-5" id="services">
             <div className='text-center w-75 py-3 mx-auto'>

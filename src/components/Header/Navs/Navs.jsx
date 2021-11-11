@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/logo.png';
@@ -9,8 +9,7 @@ import './Navs.css';
 const Navs = () => {
     const {user,signOutClick} = useAuth();
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed='top' className='bg-white'>
-            <Container>
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed='top' className='bg-white px-2'>
             <Navbar.Brand href="#home"><img src={logo} alt=""/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -19,11 +18,11 @@ const Navs = () => {
                         <Nav.Link as={HashLink} to="/home#services">Service</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#find">Find Us</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#contact">Contact Us</Nav.Link>
-                        {user.email && <Nav.Link as={NavHashLink} to="/addService#addService">Add-Service</Nav.Link>}
-                        {user.email && <NavDropdown title="Bookings" id="navbarScrollingDropdown">
-                            <NavDropdown.Item as={NavLink} to="/myBookings">My Bookings</NavDropdown.Item>
-                            <NavDropdown.Item as={NavLink} to="/manageBookings">Manage All Bookings</NavDropdown.Item>
-                        </NavDropdown>}
+                        {user.email && <>
+                            <Nav.Link as={NavHashLink} to="/addService#addService">Add-Service</Nav.Link>
+                            <Nav.Link as={NavLink} to="/myBookings">My Bookings</Nav.Link>
+                            <Nav.Link as={NavLink} to="/manageBookings">Manage All Bookings</Nav.Link>
+                        </>}
                     </Nav>
                     <Nav>
                     {user.email && <Nav.Link>
@@ -47,7 +46,6 @@ const Navs = () => {
 
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
         </Navbar>
     );
 };

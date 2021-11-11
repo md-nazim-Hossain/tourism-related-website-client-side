@@ -14,11 +14,10 @@ const ManageAllBookings = () => {
     },[]);
 
     if(!manageBookings.length){
-        return <div className="text-center p-5">
+        return <div className="text-center p-5 my-5">
                 <Spinner animation="grow" />
             </div>
     }
-
     return (
         <div className="mb-5">
             <Helmet>
@@ -26,7 +25,7 @@ const ManageAllBookings = () => {
             </Helmet>
             <Container>
                <h2 className="py-5 text-center">Manage All <span className="common-color">Bookings</span></h2>
-                <Table striped bordered hover className='p-2'>
+                <Table striped bordered hover responsive className='p-2' size="sm">
                     <thead>
                         <tr>
                             <th>Name</th>
