@@ -16,6 +16,7 @@ const Booking = () => {
     const countryNameRef = useRef();
     const passportRef = useRef();
     const emailRef = useRef();
+    const phoneRef = useRef();
     const dateRef = useRef();
     const messageRef = useRef();
 
@@ -34,14 +35,16 @@ const Booking = () => {
     const {name,title,img,price,description} = service;
 
     const handleMyOrder = e =>{
-       const name = nameRef.current.value;
-       const countryName = countryNameRef.current.value;
-       const passportNumber = passportRef.current.value;
-       const email = emailRef.current.value;
-       const date = dateRef.current.value;
-       const message = messageRef.current.value;
+        const status = "Pending..."
+        const name = nameRef.current.value;
+        const countryName = countryNameRef.current.value;
+        const passportNumber = passportRef.current.value;
+        const email = emailRef.current.value;
+        const phone = phoneRef.current.value;
+        const date = dateRef.current.value;
+        const message = messageRef.current.value;
 
-       const myBooking = {name,countryName,passportNumber,email,date,message};
+        const myBooking = {name,countryName,passportNumber,email,phone,date,message,status};
 
        // post data to server
        fetch('https://salty-taiga-78312.herokuapp.com/booking',{
@@ -59,6 +62,7 @@ const Booking = () => {
                 countryNameRef.current.value = '';
                 passportRef.current.value = '';
                 emailRef.current.value = '';
+                phoneRef.current.value = '';
                 dateRef.current.value = '';
                 messageRef.current.value = '';
            }
@@ -148,6 +152,10 @@ const Booking = () => {
                             <Form.Group className="mb-4" controlId="formGroupEmail">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control type="email" ref={emailRef} value={user.email} required className='input-bg border-right p-2'/>
+                            </Form.Group>
+                            <Form.Group className="mb-4" controlId="formGroupEmail">
+                                <Form.Label>Phone Number</Form.Label>
+                                <Form.Control type="text" ref={phoneRef} placeholder="Phone Number" required className='input-bg border-right p-2'/>
                             </Form.Group>
                             <Form.Group className="mb-4" controlId="formGroupDoctor">
                                 <Form.Label>Select Booking date</Form.Label>

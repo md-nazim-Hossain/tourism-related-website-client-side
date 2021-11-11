@@ -34,8 +34,10 @@ const MyBookings = () => {
                             <th>Name</th>
                             <th>Country Name</th>
                             <th>Gmail</th>
+                            <th>Phone No.</th>
                             <th>Passport Number</th>
                             <th>Action</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
 
@@ -46,6 +48,7 @@ const MyBookings = () => {
                                     booking = {booking}
                                     setMyBookings={setMyBookings}
                                     myBookings={myBookings}
+                                    statusId={0}
                             ></MyBooking>)
                         }
                     </tbody>
