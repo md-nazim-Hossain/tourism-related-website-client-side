@@ -29,7 +29,7 @@ const MyBooking = ({booking,setMyBookings,myBookings,statusId}) => {
     const handleStatus = id =>{
         const newBooking = {...booking,status:"Approved"};
 
-        const url = `http://localhost:5000/myBooking/${id}`;
+        const url = `https://salty-taiga-78312.herokuapp.com/myBooking/${id}`;
         fetch(url,{
             method:"PUT",
             headers:{
